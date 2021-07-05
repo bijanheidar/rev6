@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+        <script type="text/javascript" src="js/programs-submit.js"></script>
+        <script>
+            window.onload = () => {
+                document.getElementById("programs").classList.add("active");
+                retriveProgramsInProgramHTML();
+            }
+        </script>
+
+</head>
+
+<body>
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <!-- Navigation-->
+    <div>
+        <%- include('common/navigation'); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container p-0">
+        <a class="btn btn-link" href="/">Home</a><span>></span>
+        <a class="btn btn-link disabled" href="/programs">Programs</a>
+    </div>
+    <!-- Pagination -->
+
+    <!-- Programs jumbotron-->
+    <div class="container">
+        <div class="jumbotron" id="jumbo-programs">
+            <h3>Our Programs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <!-- Programs Cards-->
+    <div class="container border" style="height: 700px; overflow-y: scroll;" id="cardId">
+        
+    </div>
+
+    <!-- Page Footer -->
+
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+    <br>
+
+</body>
+
+</html>

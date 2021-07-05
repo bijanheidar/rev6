@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+    <script type="text/javascript" src="js/courses-submit.js"></script>
+    <script>
+        window.onload = () => {
+            // $(function () {
+            // $("header").load("http://localhost:8887/views/common/header.html");
+            // document.querySelector("header").innerHTML = '<object data="http://localhost:8887/views/common/header.html"></object>';
+            document.getElementById("courses").classList.add("active");
+            retriveCourses();
+        }
+    </script>
+
+    <style>
+        ul {
+            text-align: left;
+        }
+
+        td {
+            height: 120px;
+            /* Why vertical align is not working */
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <!-- Navigation-->
+    <div>
+        <%- include('common/navigation'); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container p-0">
+        <a class="btn btn-link" href="/">Home</a><span>></span>
+        <a class="btn btn-link disabled" href="/courses">Courses</a>
+    </div>
+    <!-- Pagination -->
+
+    <!-- Programs jumbotron-->
+    <div class="container">
+        <div class="jumbotron" id="jumbo-courses">
+            <h3>Apply for Our Courses</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+    
+    <!-- Coursess-->
+    <div class="container  text-center" style="height: 500px; overflow-y: scroll;">
+        <table class="table table-striped table-bordered table-hover table-light">
+            <thead class="bg-dark text-white" style="position: sticky;top: 0">
+                <tr>
+                    <th>Program</th>
+                    <th>Course</th>
+                    <th>Teacher</th>
+                    <th>Start / Finish Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="myTableBody">
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="container text-center">
+        <a class="btn-sm btn-primary" href="/admin">Internal Transactions</a>
+    </div>
+
+    <!-- Page Footer -->
+    <br>
+
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+</body>
+
+</html>

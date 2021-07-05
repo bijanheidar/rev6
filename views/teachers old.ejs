@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+    <script>
+        window.onload = () => {
+            document.getElementById("teachers").classList.add("active");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <!-- Navigation-->
+    <div>
+        <%- include('common/navigation'); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container p-0">
+        <a class="btn btn-link" href="/">Home</a><span>></span>
+        <a class="btn btn-link disabled" href="/teachers">Teachers</a>
+    </div>
+    <!-- Pagination -->
+
+    <!-- jumbotron-->
+    <div class="container">
+        <div class="jumbotron" id="jumbo-teachers">
+            <h3>Our Teachers</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <!-- Teachers Card Slider -->
+    <div class="container border">
+        <!--Carousel Wrapper-->
+        <div class="row mt-3">
+            <div class="col-6">
+                <h3 class="mb-3">Teachers </h3>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn-sm btn-primary mb-3 mr-1" href="#multi-item" role="button"
+                    data-slide="prev"><span>&#60;</span></a>
+                <a class="btn-sm btn-primary mb-3 " href="#multi-item" role="button"
+                    data-slide="next"><span>&#62;</span></a>
+            </div>
+
+            <div id="multi-item" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                <!--Slides-->
+                <div class="carousel-inner w-400 h-300" role="listbox">
+
+                    <!--First slide-->
+                    <div class="carousel-item active">
+
+                        <div class="col-md-4" style="float:left">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-m1.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" style="float:left">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-f1.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" style="float:left">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-m2.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/.First slide-->
+
+                    <!--Second slide-->
+                    <div class="carousel-item">
+
+                        <div class="col-md-4" style="float:left;">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-f2.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" style="float:left;">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-m3.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" style="float:left;">
+                            <div class="card mb-2">
+                                <img class="card-img-top mx-auto d-block" style="width:50%" src="img/teacher-f3.png"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">- Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/.Second slide-->
+
+
+
+                </div>
+                <!-- <div class="container text-center">
+                    <a class="btn-sm btn-primary" href="teachers.html">More Info</a>
+                </div> -->
+            </div>
+            <!--/.Slides-->
+            <br>
+        </div>
+    </div>
+    <br>
+    <!-- Teachers Card Slider -->
+    
+    <!-- <div class="container text-center border bg-gradient-info"
+        style="padding: 300px 20px; background-image: radial-gradient(white 90%, rgb(0, 200, 255) 98%);">
+        <h1>Teachers block</h1>
+        <h2>incl info cards, link buttoms and, scrolling feature</h2>
+    </div> -->
+    <!-- Contact Form -->
+
+    <!-- Page Footer -->
+    <br>
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+</body>
+
+</html>

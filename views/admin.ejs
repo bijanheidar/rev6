@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+    <!-- <title>Barsam Learning</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <link rel="stylesheet" href="css/jsonTree.css">
+    <script type="text/javascript" src="js/jsonTree.js"></script>
+
+    <!-- import header, footer from htmlTeplates.js -->
+    <!-- <script type="text/javascript" src="js/htmlTemplates.js"></script> -->
+    <script type="text/javascript" src="js/programs-submit.js"></script>
+    <!-- <script type="text/javascript" src="js/reports-submit.js"></script> -->
+    <script type="text/javascript" src="js/admin-submit.js"></script>
+
+    <style>
+        fieldset {
+            /* border: 3px solid black; */
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+
+        #submit {
+            text-align: center;
+            color: gray;
+            font-size: 18px;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        th {
+            background-color: #000;
+            color: #fff
+        }
+
+        th,
+        td {
+            padding: 10px
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2
+        }
+    </style>
+
+    <script>
+        window.onload = () => {
+            // $(function () {
+            // $("header").load("http://localhost:8887/views/common/header.html");
+            // document.querySelector("header").innerHTML = '<object data="http://localhost:8887/views/common/header.html"></object>';
+            // document.querySelector('header').innerHTML = header();
+            // document.querySelector('footer').innerHTML = footer();
+
+            // alert(localStorage.getItem("_id"));
+            document.getElementById('course_id').attributes[3].value = localStorage.getItem("_id");
+            document.getElementById('_program').attributes[3].value = localStorage.getItem("_program");
+            document.getElementById('_course').attributes[3].value = localStorage.getItem("_course");
+            retriveProgramsInCoursesForm();
+
+            // var urlParams = new URLSearchParams(window.location.search);
+            // console.log("selectd id:", urlParams.get('_id'));
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <div class="container mt-3">
+        <h2>Admin Page</h2>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#program">Programs</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#teacher">Teachers</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#course">Courses</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#applicant">Applicants</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#application">Applications</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reports">Table Reports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#jsonReports">json Reports</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="container tab-content">
+            <div id="program" class="container tab-pane active" style="height: 500px; overflow-y: scroll;"><br>
+                <form action="#" id="form1">
+                    <fieldset class="fieldset-form border border-dark">
+                                                <label for="title">Program main title:</label>
+                        <input type="text" name="title" id="title"><br><br>
+
+                        Description:<br>
+                        <textarea rows="3" cols="50" name="desc" id="desc" form="form1" required
+                            placeholder="Enter desc"></textarea><br><br>
+
+                        
+                        <label for="imageURL">Image URL:</label>
+                        <input type="text" name="imageURL" id="imageURL" placeholder="img/ImageFileName"><br>
+
+                        <div class="container text-center">
+                            <input type="submit" onclick="func1()" value="Add +"/><span>&nbsp</span>
+                            <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+                        </div>
+
+                    </fieldset>
+                </form>
+                <!-- <script src="js/form-submit.js"></script> -->
+            </div>
+
+            <div id="course" class="container tab-pane fade" style="height: 500px; overflow-y: scroll;"><br>
+                <form action="#">
+                    <fieldset class="fieldset-form border border-dark">
+                        <!-- <br>
+                        <legend>Create new course</legend> -->
+
+                        <label for="programId">Select program (select one):</label>
+                        <select class="form-control" id="programId" name="programId">
+                            <!-- <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option> -->
+                        </select>
+                        <br>
+
+                        <label for="courseTitle">Course T\title:</label>
+                        <input type="text" name="courseTitle" id="courseTitle"><br>
+                        <label for="date1">Start date:</label>
+                        <input type="Date" name="date1" id="date1"><br>
+                        <label for="date2">Finish date:</label>
+                        <input type="Date" name="date2" id="date2"><br>
+                        <label for="teacher">Teacher:</label>
+                        <input type="text" name="teacher" id="teacher"><br>
+
+                        <label for="status">Course Status:</label>
+                        <select class="form-control" id="status" name="status">
+                            <option value="Apply">Apply</option>
+                            <option value="Full">Full</option>
+                            <option value="Upcoming">Upcoming</option>
+
+                        </select>
+                        <br>
+
+                        <div class="container text-center">
+                            <input type="submit" onclick="func2()" value="Add +"/><span>&nbsp</span>
+                            <!-- <input type="submit" onclick="" value="Edit" /><span>&nbsp</span>
+                            <input type="submit" onclick="" value="Delete" /><span>&nbsp</span> -->
+                            <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div id="application" class="container tab-pane fade" style="height: 500px; overflow-y: scroll;"><br>
+                <form action="#" id="form3">
+                    <fieldset class="fieldset-form border border-dark">
+                        <!-- <br>
+                        <legend>Create new applicant</legend> -->
+                        <!-- <label for="course_id">Course _id:</label> -->
+                        <!-- make this hidden at final version -->
+                        <input type="hidden" name="course_id" id="course_id" value=""><br>
+
+                        <label for="_program">Program:</label>
+                        <input type="text" name="_program" id="_program" value=""><br>
+
+                        <label for="_course">Course:</label>
+                        <input type="text" name="_course" id="_course" value=""><br>
+
+                        <label for="name">Your name:</label>
+                        <input type="text" name="name" id="name" required><br>
+
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" id="age" min=10 max=120 placeholder="10 to 120 "
+                            style="width: 180px" required><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" size="50" placeholder="your@email.com" autofocus
+                            required pattern="[^ @]*@[^ @]*"><br>
+
+                        <label for="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>Phone #:</label>
+                        <input type="tel" name="phone" id="phone"><small>Format: 123-456-7890</small><br>
+
+                        Comment:<br>
+                        <textarea rows="3" cols="50" name="comment" id="comment" form="form3" required
+                            placeholder="Enter your comment here"></textarea>
+
+                        <!-- <input type="hidden" name="requestDate" id="requestDate" value=""> -->
+
+                        <div class="container text-center">
+                            <input type="submit" onclick="func3()" value="Add +" /><span>&nbsp&nbsp</span>
+                            <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div id="reports" class="container tab-pane fade"><br>
+                <div class="container contact">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="myselect" onchange="reports(this.value)">
+                                <option value="">Choose an option:</option>
+                                <option value="1">Programs</option>
+                                <option value="2">Courses</option>
+                                <option value="3">Teachers</option>
+                                <option value="4">Applicants</option>
+                                <option value="5">Applications</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="container contact">
+                    <div class="row" style="height: 500px; overflow: scroll;">
+
+                        <div id="tableId"></div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="jsonReports" class="container tab-pane fade"><br>
+                <div class="container contact">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+                        </div>
+                        <div class="col-sm-4">
+                            <select id="myselect" onchange="jsonReports(this.value)">
+                                <option value="">Choose an option:</option>
+                                <option value="1">Programs</option>
+                                <option value="2">Courses</option>
+                                <option value="3">Teachers</option>
+                                <option value="4">Applicants</option>
+                                <option value="5">Applications</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="container contact">
+                    <div class="row" style="height: 500px; overflow: scroll;">
+
+                        <div id="wrapper"></div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <script>
+        $(document).ready(function () {
+            $(".nav-tabs a:last").click(function () {
+                $(this).tab('show');
+            });
+        });
+    </script> -->
+
+    <!-- Page Footer -->
+    <br>
+    
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+    <script type="text/javascript" src="js/teachers-submit.js"></script>
+    <script>
+        window.onload = () => {
+            document.getElementById("teachers").classList.add("active");
+            retriveTeachers()
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <!-- Navigation-->
+    <div>
+        <%- include('common/navigation'); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container p-0">
+        <a class="btn btn-link" href="/">Home</a><span>></span>
+        <a class="btn btn-link disabled" href="/teachers">Teachers</a>
+    </div>
+    <!-- Pagination -->
+
+    <!-- jumbotron-->
+    <div class="container">
+        <div class="jumbotron" id="jumbo-teachers">
+            <h3>Our Teachers</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <!-- Teachers Card Slider -->
+    <div class="container border">
+        <!--Carousel Wrapper-->
+        <div class="row mt-3">
+            <!-- <div class="col-6">
+                <h3 class="mb-3">Teachers </h3>
+            </div> -->
+            <div class="col-12 text-right">
+                <a class="btn-sm btn-primary mb-3 mr-1" href="#multi-item" role="button"
+                    data-slide="prev"><span>&#60;</span></a>
+                <a class="btn-sm btn-primary mb-3 " href="#multi-item" role="button"
+                    data-slide="next"><span>&#62;</span></a>
+            </div>
+
+            <div id="multi-item" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                <!--Slides-->
+                <div class="carousel-inner w-400 h-300" role="listbox" id="cardId">
+                </div>
+                <!-- <div class="container text-center">
+                    <a class="btn-sm btn-primary" href="teachers.html">More Info</a>
+                </div> -->
+            </div>
+            <!--/.Slides-->
+            <br>
+        </div>
+    </div>
+    <br>
+    <!-- Teachers Card Slider -->
+
+    <!-- Page Footer -->
+    <br>
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+</body>
+
+</html>

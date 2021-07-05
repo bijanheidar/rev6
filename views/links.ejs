@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('common/head'); %>
+    <script>
+        window.onload = () => {
+            document.getElementById("links").classList.add("active");
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <%- include('common/header'); %>
+    </header>
+
+    <!-- Navigation-->
+    <div>
+        <%- include('common/navigation'); %>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container p-0">
+        <a class="btn btn-link" href="/">Home</a><span>></span>
+        <a class="btn btn-link disabled" href="/links">Links</a>
+    </div>
+    <!-- Pagination -->
+
+    <!-- jumbotron-->
+    <div class="container">
+        <div class="jumbotron" id="jumbo-links">
+            <h3>Links</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="container text-center border bg-secondary"
+        style="padding: 300px 20px; background-image: radial-gradient(white 90%, rgb(0, 183, 255) 98%);">
+        <h1>Some Useful links</h1>
+        <h2>incl info cards, link buttoms and, scrolling feature</h2>
+    </div>
+    <!-- Contact Form -->
+
+
+    <!-- Page Footer -->
+    <br>
+    <footer>
+        <%- include('common/footer'); %>
+    </footer>
+
+
+</body>
+
+</html>

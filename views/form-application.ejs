@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('common/head'); %>
+
+  <script src="js/admin-submit.js"></script>
+
+  <style>
+    #submit {
+      text-align: center;
+      color: gray;
+      font-size: 18px;
+      text-shadow: 1px 1px 1px black;
+    }
+  </style>
+
+  <script>
+    window.onload = () => {
+      document.getElementById('course_id').attributes[3].value = localStorage.getItem("_id");
+      document.getElementById('_program').attributes[3].value = localStorage.getItem("_program");
+      document.getElementById('_course').attributes[3].value = localStorage.getItem("_course");
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+    <%- include('common/header'); %>
+  </header>
+
+  <br>
+  <div class="container contact">
+    <div class="row">
+
+      <div class="col-md-4" id="form-application">
+        <div class="contact-info">
+          <!-- <img src="../img/c2-science.jpg" id="form-application" alt="image"/> -->
+          <h2>Send your request</h2>
+          <h4>We would love to hear from you !</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.</p>
+
+          <input type="hidden" name="course_id" id="course_id" value=""><br>
+
+          <label class="font-weight-bold" for="_program">Slected Program:</label>
+          <input type="text" name="_program" id="_program" value="" disabled><br>
+
+          <label class="font-weight-bold" for="_course">Selected Course:</label>
+          <input type="text" name="_course" id="_course" value="" disabled><br>
+        </div>
+      </div>
+      <div class="col-md-8 text-info font-weight-bold">
+        <!-- <div class="contact-form"> -->
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="name">Your Name:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name" required
+              autofocus>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="age">Age:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="age" placeholder="Enter 10-120 :)" name="age" id="age" min=10
+              max=120 required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="email">Email:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+              pattern="[^ @]*@[^ @]*" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="phone">Phone:</label>
+          <div class="col-sm-8">
+            <input type="tel" class="form-control" id="phone" placeholder="Your phone" name="phone"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="format: 123-456-7890" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="comment">Comment:</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" rows="4" id="comment" placeholder="Enter your comment here"
+              required></textarea>
+          </div>
+        </div>
+
+        <!-- <input type="hidden" name="requestDate" id="requestDate" value=""> -->
+
+        <div class="container form-group">
+          <div class="col-sm-8">
+            <div class="container text-center">
+              <input type="submit" onclick="func3()" value="Send" />
+              <span>&nbsp&nbsp</span>
+              <input type="button" onclick="window.location.href = '/courses'" value="Return" />
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Page Footer -->
+  <br>
+
+  <footer>
+    <%- include('common/footer'); %>
+  </footer>
+
+</body>
+
+</html>

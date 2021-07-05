@@ -1,0 +1,27 @@
+#jumbo-programs {
+    background-image: url("../img/Background-programs.jpg");
+}
+
+#jumbo-teachers {
+    background-image: url("../img/Background-teachers.jpg");
+    background-size: 100% 100%; 
+}
+
+#jumbo-schedule {
+    background-image: url("../img/Background-schedule.jpg");
+}
+
+#jumbo-links {
+    background-image: url("../img/Background-links.jpg");
+}
+
+#jumbo-contact {
+    background-image: url("../img/Background-contact2.jpg");
+    background-size: 100% 100%; 
+}
+
+#form-application {
+    background-image: url("../img/Background-apply1.jpg") ;
+    background-size: 100% 100%; 
+}
+
