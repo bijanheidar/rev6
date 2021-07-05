@@ -24,8 +24,7 @@ A sample teaching and tutoring responsive website
 * ejs: for rendering htmls 
 
 ## Future Expansion
-* To add more CRUD freatures (currently the app can only add new programs, courses, applicants and applications, the rest should be implemented directly through MongoDB compass)
-* Add a teacher CRUD form (currentl teacher data are static)
+* Add more CRUD freatures (currently the app can only add new programs, courses, applicants and applications, the rest should be implemented directly through MongoDB compass)
 * Add various reports using Mongoos's aggregate and populate methods and features 
 
 
